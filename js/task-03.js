@@ -20,10 +20,14 @@ const ref = {
 
 
 
-images.map(img => ref.liList.insertAdjacentHTML( "afterbegin",`<li><img class="image" src= "${img.url}" width="200" height="150"></li>`) );
-
-
-
+const img =  images.map(img =>`<li>
+     <img class="image"
+      src= "${img.url}" 
+      width="200"
+       height="150">
+       </li>`).join('');
+   
+   ref.liList.insertAdjacentHTML('beforeend', img);
 
 
 
